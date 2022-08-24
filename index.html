@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="play()">Play</button>
+    <p class="winner"></p>
+
+</body>
+
+<script>
+
+    /*
+    1 - Stein
+    2 - Papier
+    3 - Schere
+    */
+    function play() {
+        const player1 = (Math.random() * 2 + 1).toFixed();
+
+        const player2 = (Math.random() * 2 + 1).toFixed();
+
+        console.log(Math.random())
+        console.log(player1, player2)
+
+        const element = document.querySelector('.winner');
+
+        element.innerHTML = 'Fuck'
+        if (player1 == player2) {
+            alert('Unentschieden')
+            return
+        }
+        if (player1 == 1) {
+            if (player2 == 2) {
+                element.innerHTML = 'Player 2 gewonnen'
+                return
+            }
+            if (player2 == 3) {
+                element.innerHTML = 'Player 1 gewonnen'
+                return
+            }
+        }
+        if (player1 == 2) {
+            if (player2 == 1) {
+                element.innerHTML = 'Player 1 gewonnen'
+                return
+            }
+            if (player2 == 3) {
+                alert('Player 2 gewonnen')
+                return
+            }
+        }
+        if (player1 == 3) {
+            if (player2 == 1) {
+                alert('Player 2 gewonnen')
+                return
+            }
+            if (player2 == 2) {
+                alert('Player 1 gewonnen')
+                return
+            }
+        }
+    }
+
+
+</script>
+
+</html>
